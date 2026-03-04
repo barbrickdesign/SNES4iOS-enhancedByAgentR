@@ -48,6 +48,7 @@
 @property (nonatomic, strong) IBOutlet UIButton *connectionButton;
 @property (copy, nonatomic) NSString *imageName;
 @property (strong, nonatomic) NSMutableSet *sustainedButtons;
+@property (strong, nonatomic) UIImpactFeedbackGenerator *impactFeedbackGenerator API_AVAILABLE(ios(10.0));
 #if APP_BUILD
 @property (weak, nonatomic) IBOutlet UIButton *sustainButton;//This errors out when compiling emulator
 #else 
