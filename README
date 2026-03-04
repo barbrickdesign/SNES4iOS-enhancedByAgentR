@@ -1,5 +1,10 @@
 Emulators for various platforms have been available for years on the iOS platform, but they’ve always required the user to jailbreak their devices. Thanks to Spencer Nielsen (@snielsen42 http://www.aorensoftware.com/blog/2011/05/23/play-snes-games-on-your-ipad-without-jailbreaking/), an SNES emulator for iOS is now available, albeit only for developers.
 
+WHAT’S NEW IN VERSION 1.2:
+•.sfc ROM format support: The ROM browser now recognizes .sfc files (Super Famicom Cart), one of the most widely-used SNES ROM extensions alongside .smc.
+•Haptic feedback: Tapping any controller button on iPhone/iPod Touch now produces a light haptic tap (requires iOS 10 or later and a device with a Taptic Engine).
+•Memory fix: Corrected an over-allocation in the emulation thread startup path.
+
 WHAT’S NEW IN VERSION 1.1:
 •Sustain Button: a new button (looks like a circle with four arrows pointed towards the center) allows you to essentially sustain, or hold down a button without keeping your finger on the button. You tap the sustain button, it will turn orange, and then you tap the button you wish to sustain. For example, if you wanted to keep your character moving to the right, you’d tap the sustain button, then tap the right button, and then you can lift your finger off and it will keep going to the right. This is especially useful in platformers such as Mario games, as you can sustain the run button without having to hold it down!
 •Both the Objective-C app code and the C snes9x emulator code are included in the same .xcworkspace file. It’s strongly recommended you use the workspace file instead of the individual project files.

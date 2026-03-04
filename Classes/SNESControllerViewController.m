@@ -43,7 +43,6 @@ void rt_dispatch_sync_on_main_thread(dispatch_block_t block) {
 @synthesize sustainedButtons;
 @synthesize sustainButton;
 @synthesize readyToSustain;
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,6 +51,10 @@ void rt_dispatch_sync_on_main_thread(dispatch_block_t block) {
     self.connectionButton.transform = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(0.0));
 	self.view.multipleTouchEnabled = YES;
     self.sustainedButtons = [NSMutableSet setWithCapacity:12];//12 = number of interaction buttons on SNES Controller
+    if (@available(iOS 10.0, *)) {
+        self.impactFeedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+        [self.impactFeedbackGenerator prepare];
+    }
 	//self.imageView.image = [UIImage imageNamed:DefaultControllerImage];
 }
 
@@ -206,6 +209,12 @@ void rt_dispatch_sync_on_main_thread(dispatch_block_t block) {
 	int i;
 	NSSet *allTouches = [event allTouches];
 	int touchcount = [allTouches count];
+    
+    // Provide haptic feedback on button press (iOS 10+)
+    if (@available(iOS 10.0, *)) {
+        [self.impactFeedbackGenerator impactOccurred];
+        [self.impactFeedbackGenerator prepare];
+    }
     
     if (self.readyToSustain) {
         gp2x_pad_status = 0;

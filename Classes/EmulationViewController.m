@@ -42,9 +42,8 @@ void *threadedStart(NSString *completeFilePath)
 {
 	@autoreleasepool {
         void *romName = (void *)[[completeFilePath lastPathComponent] UTF8String];
-        void *completeUTF8StringFilePath = (void*)[completeFilePath UTF8String];
-		char *filename = malloc(strlen((char *)completeUTF8StringFilePath) + 1);
-    strcpy(filename, (char *)romName);
+		char *filename = malloc(strlen((char *)romName) + 1);
+        strcpy(filename, (char *)romName);
 		printf("Starting emulator for %s\n", filename);
 		__emulation_run = 1;
 		iphone_main(filename);

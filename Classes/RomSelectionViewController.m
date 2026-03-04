@@ -159,7 +159,8 @@
 			[[[dirContents  objectAtIndex: i ] substringWithRange:NSMakeRange([[dirContents  objectAtIndex: i ] length]-4,4)] caseInsensitiveCompare:@".bin"] != NSOrderedSame &&
 			[[[dirContents  objectAtIndex: i ] substringWithRange:NSMakeRange([[dirContents  objectAtIndex: i ] length]-4,4)] caseInsensitiveCompare:@".zip"] != NSOrderedSame &&
 			[[[dirContents  objectAtIndex: i ] substringWithRange:NSMakeRange([[dirContents  objectAtIndex: i ] length]-4,4)] caseInsensitiveCompare:@".swc"] != NSOrderedSame &&
-			[[[dirContents  objectAtIndex: i ] substringWithRange:NSMakeRange([[dirContents  objectAtIndex: i ] length]-4,4)] caseInsensitiveCompare:@".smc"] != NSOrderedSame 
+			[[[dirContents  objectAtIndex: i ] substringWithRange:NSMakeRange([[dirContents  objectAtIndex: i ] length]-4,4)] caseInsensitiveCompare:@".smc"] != NSOrderedSame &&
+			[[[dirContents  objectAtIndex: i ] substringWithRange:NSMakeRange([[dirContents  objectAtIndex: i ] length]-4,4)] caseInsensitiveCompare:@".sfc"] != NSOrderedSame 
 			)
 		   )
 		{
